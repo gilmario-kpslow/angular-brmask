@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  pipeCPFCodigo = `{{ cpf | glmask: 'CPF' }}`;
+  mascaraCPFCodigo = `{{ <input glmaskCPF type="text" > }}`;
   title = 'glmask-lib-demo';
+  cpf = '67096050353';
 }

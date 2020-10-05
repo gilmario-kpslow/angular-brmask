@@ -119,6 +119,46 @@
           }
         }
       }
+    },
+    "glmask": {
+      "projectType": "library",
+      "root": "projects/glmask",
+      "sourceRoot": "projects/glmask/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/glmask/tsconfig.lib.json",
+            "project": "projects/glmask/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/glmask/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/glmask/src/test.ts",
+            "tsConfig": "projects/glmask/tsconfig.spec.json",
+            "karmaConfig": "projects/glmask/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/glmask/tsconfig.lib.json",
+              "projects/glmask/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "glmask-lib-demo"
 }

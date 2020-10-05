@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/glmask/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/glmask/tsconfig.spec.json"
     }
 ]
 }

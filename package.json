@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build glmask",
     "build-lib": "ng build ",
-    "publish": "ng buildng build glmask && npm publish dist/glmask/",
+    "publish": "ng build glmask --prod && npm publish dist/glmask/",
     "test": "ng test",
     "lint": "ng lint",
 

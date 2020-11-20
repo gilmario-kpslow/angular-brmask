@@ -1,6 +1,5 @@
-import { Formato } from './formato';
-import { formatosPadrao } from './formato.consts';
 export const formatar = (formato: string, valor: string): string => {
+  console.log(formato);
   let retorno = '';
   let j = 0;
   for (let i = 0; i < formato.length && j < valor.length; i++) {
@@ -12,12 +11,4 @@ export const formatar = (formato: string, valor: string): string => {
     }
   }
   return retorno;
-};
-
-export const selecionarFormato = (identificador: string): Formato  => {
-  const formato = formatosPadrao.find(f => f.identificador === identificador);
-  if (formato) {
-    return formato;
-  }
-  Error('Formato Não definido, od formatos valisof são: ' + formatosPadrao.map);
 };

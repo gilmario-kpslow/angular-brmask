@@ -1,16 +1,20 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { formatar, selecionarFormato } from './mask-functions';
-import { Formato } from './formato';
-import { formatosPadrao } from './formato.consts';
+import { Formato } from './formato.consts';
+import { formatar } from './mask-functions';
 
 @Pipe({
   name: 'glmask'
 })
 export class MascaraPipe implements PipeTransform {
 
-  formatos: Formato[] = formatosPadrao;
   transform(value: any, ...args: any[]): any {
-    return formatar(selecionarFormato(args[0]).mascara, value);
+    console.log(args)
+    if(args[1] && args[2]) {
+      if(!args[2](value)) {
+        return formatar(Formato[args[1]], value);    
+      }
+    }
+    return formatar(Formato[args[0]], value);    
   }
 
 

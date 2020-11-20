@@ -1,6 +1,6 @@
 import { Directive, ElementRef, forwardRef, HostListener, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { formatar, selecionarFormato } from '../pipes/mask-functions';
+// import { formatar, selecionarFormato } from '../pipes/mask-functions';
 
 @Directive({
   selector: '[glMascaraCPF]',
@@ -57,7 +57,8 @@ export class GlCPFDirective implements ControlValueAccessor {
   // }
 
   private _applyMask(valor: string): string {
-    return formatar(selecionarFormato('CPF').mascara, valor);
+    // return formatar(selecionarFormato('CPF').mascara, valor);
+    return valor;
   }
 
 }

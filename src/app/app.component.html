@@ -1,18 +1,10 @@
 Exemplo mascara:
-<ul>
-  <li>
-    <div>
-      <b>CPF: </b> <input glmaskCPF type="text" glMascaraCPF> - {{cpf | glmask: 'CPF'}}
-    </div>
-    <div>
-      pipe: <code>{{pipeCPFCodigo}}</code>
-    </div>
-    <div>
-      input: <code>{{mascaraCPFCodigo}}</code>
-    </div>
+<app-mask-exemplo maskType="CPF" maskInput="glMascara" titulo="CPF" ></app-mask-exemplo>
+<app-mask-exemplo maskType="CNPJ" maskInput="glMascara" titulo="CNPJ" ></app-mask-exemplo>
+<app-mask-exemplo maskType="CPF" [maskParams]="['CNPJ', isCnpj]" maskInput="glMascara" formato="CNPJ" titulo="CPF/CNPJ alternando" ></app-mask-exemplo>
+<app-mask-exemplo maskType="CEP" maskInput="glMascara" titulo="CEP" ></app-mask-exemplo>
+<app-mask-exemplo maskType="CGF" maskInput="glMascara" titulo="CGF" ></app-mask-exemplo>
+<app-mask-exemplo maskType="CEL" maskInput="glMascara" titulo="CEL" ></app-mask-exemplo>
+<app-mask-exemplo maskType="FIXO" maskInput="glMascara" titulo="FIXO" ></app-mask-exemplo>
+<app-mask-exemplo maskType="FIXO" [maskParams]="['CEL', isCel]" maskInput="glMascara" formato="FIXO" titulo="FIXO/CEL alternando" ></app-mask-exemplo>
 
-  </li>
-  <li>
-    <b>CNPJ: </b> <input type="text" > - {{cpf | glmask: 'CNPJ'}}
-  </li>
-</ul>

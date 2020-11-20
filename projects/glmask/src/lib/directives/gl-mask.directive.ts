@@ -1,6 +1,6 @@
 import { Directive, Renderer2, ElementRef, HostListener, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { formatar } from '../pipes/mask-functions';
+import { formatar, aplicarFormatacao } from '../pipes/mask-functions';
 import { Formato } from '../pipes/formato.consts';
 
 @Directive({
@@ -60,10 +60,7 @@ export class GlMASKDirective implements ControlValueAccessor {
     }
 
     private _applyMask(valor: string) {
-        if(this.outroFormato && this.alternar && this.alternar(valor)) {
-            return formatar(Formato[this.outroFormato], valor);
-        }
-        return formatar(Formato[this.formato], valor);
+        return aplicarFormatacao(this.formato, this.outroFormato, this.alternar, valor);
     }
 
 }

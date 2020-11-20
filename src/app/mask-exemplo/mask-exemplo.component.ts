@@ -24,15 +24,19 @@ export class MaskExemploComponent implements OnInit {
   }
 
   getDescInput() {
-    return `<input glMascara formato="${this.maskType}" type="text" >`;
+    if(this.maskParams) {
+      return `<input glMascara formato="${this.maskType}" type="text" outroFormato="${this.maskParams[0]}" alternar="${this.maskParams[1].name}">`;
+    } else {
+      return `<input glMascara formato="${this.maskType}" type="text" >`;
+    }
   }
 
   getDescPipeParams() {
-    return `{{ value | glmask: '${this.maskType}': ${this.maskParams[0].name} : ${this.maskParams[1]} }}`;
+    return `{{ value | glmask: '${this.maskType}': ${this.maskParams[0]} : ${this.maskParams[1].name} }}`;
   }
 
   getDescFunction() {
-    return `${this.maskParams[0]}`;
+    return `${this.maskParams[1]}`;
   }
 
   is(value: string) {

@@ -1,5 +1,5 @@
+import { Formato } from './formato.consts';
 export const formatar = (formato: string, valor: string): string => {
-  console.log(formato);
   let retorno = '';
   let j = 0;
   for (let i = 0; i < formato.length && j < valor.length; i++) {
@@ -12,3 +12,13 @@ export const formatar = (formato: string, valor: string): string => {
   }
   return retorno;
 };
+
+export const aplicarFormatacao = (formato: string, outroFormato: string, alternar: Function, valor: string) => {
+  if(!valor) {
+    return valor;
+  }
+  if(outroFormato && alternar && alternar(valor)) {
+    return formatar(Formato[outroFormato], valor);
+  }
+  return formatar(Formato[formato], valor);
+} 

@@ -1,27 +1,29 @@
-# GlmaskLibDemo
+# glmask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
+Mascaras simples e flaxiveis para projetos Brasileiros que trabalhan com angular2+.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute `ng serve` para iniciar o projeto. Acesse `http://localhost:4200/`.
 
-## Code scaffolding
+## Como usar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+INPUT
+  <input glMascara formato="CPF" type="text" >
+  
+ PIPE
+ {{ value | glmask: 'CPF' }}
+ 
+ 
+ ## Formatos disponíveis
+ 
+  CPF = '999.999.999-99'
+  CNPJ = '99.999.999/9999-99'
+  CEL = '(99) 9 9999-9999'
+  FIXO = '(99) 9999-9999'
+  CEP = '99.999-999'
+  CGF = '99.99999-9'
+ 
+ ## Como usar duas mascaras em um input
+   
+ <input glMascara formato="FIXO" type="text" outroFormato="CEL" alternar="isCel">

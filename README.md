@@ -32,7 +32,7 @@ INPUT
 
 ...
 
-> input glMascara formato="CPF" type="text" outroFormato="CNPJ" alternar="isCnpj"
+> <input glMascara formato="CPF" type="text" outroFormato="CNPJ" alternar="isCnpj"
 
 ...
 

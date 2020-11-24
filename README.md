@@ -9,7 +9,7 @@ Execute `ng serve` para iniciar o projeto. Acesse `http://localhost:4200/`.
 ## Como usar
 
 INPUT
->  <input glMascara formato="CPF" type="text" >
+>  <input glMascara formato="CPF" type="text"
   
  PIPE
 > {{ value | glmask: 'CPF' }}
@@ -30,11 +30,7 @@ INPUT
 
 > {{ value | glmask: 'CPF' }}
 
-...
-
 > <input glMascara formato="CPF" type="text" outroFormato="CNPJ" alternar="isCnpj"
-
-...
 
 > {{ value | glmask: 'CPF': CNPJ : isCnpj }}
 

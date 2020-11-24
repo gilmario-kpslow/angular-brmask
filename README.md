@@ -9,10 +9,10 @@ Execute `ng serve` para iniciar o projeto. Acesse `http://localhost:4200/`.
 ## Como usar
 
 INPUT
-  <input glMascara formato="CPF" type="text" >
+>  <input glMascara formato="CPF" type="text" >
   
  PIPE
- {{ value | glmask: 'CPF' }}
+> {{ value | glmask: 'CPF' }}
  
  
  ## Formatos disponíveis
@@ -24,6 +24,14 @@ INPUT
   CEP = '99.999-999'
   CGF = '99.99999-9'
  
- ## Como usar duas mascaras em um input
-   
- <input glMascara formato="FIXO" type="text" outroFormato="CEL" alternar="isCel">
+## Usar
+
+> <input glMascara formato="CPF" type="text" >
+
+> {{ value | glmask: 'CPF' }}
+
+> <input glMascara formato="CPF" type="text" outroFormato="CNPJ" alternar="isCnpj">
+
+> {{ value | glmask: 'CPF': CNPJ : isCnpj }}
+
+> isCnpj(value) { return value.length > 11; }

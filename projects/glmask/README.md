@@ -1,4 +1,15 @@
 # Glmask
+    Mascaras simples
+    
+### Mascaras diversas
+
+CPF = '999.999.999-99',
+CNPJ = '99.999.999/9999-99',
+CEL = '(99) 9 9999-9999',
+FIXO = '(99) 9999-9999',
+CEP = '99.999-999',
+CGF = '99.999999-9'
+
 
 
 ## Configurar
@@ -10,13 +21,14 @@
     ]
 
 
-> Note: Don't forget to add `--project glmask` or else it will be added to the default project in your `angular.json` file. 
+## Usar
 
-## Build
+> <input glMascara formato="CPF" type="text" >
 
-## Publishing
+> {{ value | glmask: 'CPF' }}
 
-## Running unit tests
+> <input glMascara formato="CPF" type="text" outroFormato="CNPJ" alternar="isCnpj">
 
-## Further help
+> {{ value | glmask: 'CPF': CNPJ : isCnpj }}
 
+> isCnpj(value) { return value.length > 11; }

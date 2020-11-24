@@ -23,11 +23,11 @@
 
 ## Usar
 
-> <input glMascara formato="CPF" type="text" >
+> <input glMascara formato="CPF" type="text"
 
 > {{ value | glmask: 'CPF' }}
 
-> <input glMascara formato="CPF" type="text" outroFormato="CNPJ" alternar="isCnpj">
+> <input glMascara formato="CPF" type="text" outroFormato="CNPJ" alternar="isCnpj"
 
 > {{ value | glmask: 'CPF': CNPJ : isCnpj }}
 

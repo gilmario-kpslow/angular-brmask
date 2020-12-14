@@ -35,3 +35,9 @@ INPUT
 > {{ value | glmask: 'CPF': CNPJ : isCnpj }}
 
 > isCnpj(value) { return value.length > 11; }
+
+## GlFone
+
+> <input glFone type="text"
+
+> {{ value | glmask: 'CPF' }}

@@ -1,0 +1,20 @@
+<div class="exemplo">
+  <div style="margin-bottom: 10px;">
+      <b> </b>
+      <input [(ngModel)]="value" type="text" glFone>
+      <div>
+          Retorno: {{value}}
+      </div>
+      <div>
+          Ex:
+          <pre>{{getDescInput()}}</pre>
+      </div>
+  </div>
+  <div>
+      <b>PIPE: </b> {{value | glFone }}
+      <div>
+          Ex:
+          <pre>{{getDescPipe()}}</pre>
+      </div>
+  </div>
+</div>

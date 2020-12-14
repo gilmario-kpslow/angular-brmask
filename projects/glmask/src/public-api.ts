@@ -4,3 +4,4 @@
 export * from './lib/glmask.module';
 export { GlMASKDirective } from './lib/directives/gl-mask.directive';
 export { MascaraPipe } from './lib/pipes/mascara.pipe';
+export { GlFoneDirective } from './lib/directives/gl-mask-fone.directive';

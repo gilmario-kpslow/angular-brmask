@@ -7,12 +7,14 @@ import { GlmaskModule } from '../../projects/glmask/src/lib/glmask.module';
 import { TesteDirective } from './teste.directive';
 import { FormsModule } from '@angular/forms';
 import { MaskExemploComponent } from './mask-exemplo/mask-exemplo.component';
+import { MaskFoneComponent } from './mask-fone/mask-fone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TesteDirective,
-    MaskExemploComponent
+    MaskExemploComponent,
+    MaskFoneComponent
   ],
   imports: [
     BrowserModule,

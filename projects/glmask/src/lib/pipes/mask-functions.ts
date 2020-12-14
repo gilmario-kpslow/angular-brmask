@@ -21,4 +21,21 @@ export const aplicarFormatacao = (formato: string, outroFormato: string, alterna
     return formatar(Formato[outroFormato], valor);
   }
   return formatar(Formato[formato], valor);
-} 
+}
+
+export const foneFormat = (valor: string) => {
+  console.log(valor)
+  if(!valor) {
+    return valor;
+  }
+
+  if(valor.length <= 8) {
+    return formatar('9999-9999', valor);
+  } else if(valor.length <= 9) {
+    return formatar('9 9999-9999', valor);
+  } else if(valor.length <= 10){
+    return formatar('(99) 9999-9999', valor);
+  } else {
+    return formatar('(99) 9 9999-9999', valor);
+  }
+}

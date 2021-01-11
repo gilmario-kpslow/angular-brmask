@@ -17,14 +17,13 @@ export const aplicarFormatacao = (formato: string, outroFormato: string, alterna
   if(!valor) {
     return valor;
   }
-  if(outroFormato && alternar && alternar(valor)) {
-    return formatar(Formato[outroFormato], valor);
+  if(outroFormato && alternar && alternar('${valor}')) {
+    return formatar(Formato[outroFormato], '${valor}');
   }
-  return formatar(Formato[formato], valor);
+  return formatar(Formato[formato], '${valor}');
 }
 
 export const foneFormat = (valor: string) => {
-  console.log(valor)
   if(!valor) {
     return valor;
   }

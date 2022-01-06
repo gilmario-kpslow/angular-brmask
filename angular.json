@@ -159,6 +159,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "glmask-lib-demo"
+    }
+  },
+  "defaultProject": "glmask-lib-demo",
+  "cli": {
+    "analytics": "895bd503-bf1f-41d4-9f27-e77438bfefa8"
+  }
 }

@@ -38,7 +38,9 @@ export const foneFormat = (valor: string) => {
     return formatar('9 9999-9999', valor);
   } else if(valor.length <= 10){
     return formatar('(99) 9999-9999', valor);
-  } else {
+  } else if(valor.length <= 11){
     return formatar('(99) 9 9999-9999', valor);
+  } else {
+    return formatar('(9999) 9999-9999', valor);
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "glmask",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {"email": "gilmariosoftware@gmail.com", "name": "gilmario batista", "url": "https://www.npmjs.com/~gilmario.batista"},
   "peerDependencies": {
     "@angular/common": "^10.0.14",

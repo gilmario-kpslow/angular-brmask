@@ -24,7 +24,6 @@ export const aplicarFormatacao = (formato: string, outroFormato: string, alterna
 }
 
 export const foneFormat = (valor: string) => {
-  console.log(valor)
   if(!valor) {
     return valor;
   }

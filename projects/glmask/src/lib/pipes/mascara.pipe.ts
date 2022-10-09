@@ -7,6 +7,6 @@ import { aplicarFormatacao } from './mask-functions';
 export class MascaraPipe implements PipeTransform {
 
   transform(value: any, ...args: any[]): any {
-    return aplicarFormatacao(args[0], args[1], args[2], value);
+    return aplicarFormatacao(value, args[0], args[1], args[2]);
   }
 }

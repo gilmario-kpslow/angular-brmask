@@ -18,7 +18,7 @@ export class GlMASKDirective implements ControlValueAccessor {
 
     @Input() formato: string;
     @Input() outroFormato: string;
-    @Input() alternar: Function;
+    @Input() tamanho: number;
     @HostListener('input', ['$event'])
     oninput(event: Event) {
         const value = this.elementRef.nativeElement.value;
@@ -59,7 +59,7 @@ export class GlMASKDirective implements ControlValueAccessor {
     }
 
     private _applyMask(valor: string) {
-        return aplicarFormatacao(this.formato, this.outroFormato, this.alternar, valor);
+        return aplicarFormatacao(valor, this.formato, this.outroFormato, this.tamanho);
     }
 
 }

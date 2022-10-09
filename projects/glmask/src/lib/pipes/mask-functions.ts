@@ -13,11 +13,11 @@ export const formatar = (formato: string, valor: string): string => {
   return retorno;
 };
 
-export const aplicarFormatacao = (formato: string, outroFormato: string, alternar: Function, valor: string) => {
+export const aplicarFormatacao = (valor: string, formato: string, outroFormato: string, tamanho: number) => {
   if(!valor) {
     return valor;
   }
-  if(outroFormato && alternar && alternar(valor)) {
+  if(outroFormato && tamanho && valor.length > tamanho) {
     return formatar(Formato[outroFormato], valor);
   }
 

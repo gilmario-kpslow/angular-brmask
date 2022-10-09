@@ -1,21 +1,21 @@
 <div class="exemplo">
 
     <div style="margin-bottom: 10px;">
-        <b>{{titulo}}: </b> 
-        <input *ngIf="maskParams" [(ngModel)]="value" type="text" glMascara [formato]="maskType" [outroFormato]="maskParams[0]" [alternar]="maskParams[1]">
+        <b>{{titulo}}: </b>
+        <input *ngIf="maskParams" [(ngModel)]="value" type="text" glMascara [formato]="maskType" [outroFormato]="maskParams[0]" [tamanho]="maskParams[1]">
         <input *ngIf="!maskParams" [(ngModel)]="value" type="text" glMascara [formato]="maskType">
         <div>
             Retorno: {{value}}
         </div>
         <div>
             Ex:
-            <pre>{{getDescInput()}}</pre> 
+            <pre>{{getDescInput()}}</pre>
         </div>
     </div>
     <div *ngIf="maskParams">
         <b>PIPE: </b> {{value | glmask: maskType: maskParams[0]: maskParams[1] }}
         <div>
-            Ex: 
+            Ex:
             <pre>{{getDescPipeParams()}}</pre>
             <pre>{{getDescFunction()}}</pre>
         </div>
@@ -23,7 +23,7 @@
     <div *ngIf="!maskParams">
         <b>PIPE: </b> {{value | glmask: maskType }}
         <div>
-            Ex: 
+            Ex:
             <pre>{{getDescPipe()}}</pre>
         </div>
     </div>

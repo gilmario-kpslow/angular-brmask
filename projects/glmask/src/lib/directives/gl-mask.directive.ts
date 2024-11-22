@@ -17,11 +17,17 @@ export class GlMASKDirective implements ControlValueAccessor {
     constructor(private renderer: Renderer2, private elementRef: ElementRef) { }
 
     @Input() formato: string;
+    @Input() upperCase: boolean;
+
     @HostListener('input', ['$event'])
     oninput(event: Event) {
-        const value = this.elementRef.nativeElement.value;
-        this.elementRef.nativeElement.value = this._applyMask(value.split(/[^A-Za-z0-9]+/).join(''));
-        this.onChange(this.elementRef.nativeElement.value.split(/[^A-Za-z0-9]/).join(''));
+        let value = this.elementRef.nativeElement.value;
+        if (this.upperCase && value) {
+            value = `${value}`.toUpperCase();
+        }
+        const limpo = value.split(/[^A-Za-z0-9]+/).join('');
+        this.elementRef.nativeElement.value = this._applyMask(limpo);
+        this.onChange(this.elementRef.nativeElement.value.split(/[^A-Za-z0-9]+/).join(''));
         this.onTouch();
         event.preventDefault();
         event.stopPropagation();

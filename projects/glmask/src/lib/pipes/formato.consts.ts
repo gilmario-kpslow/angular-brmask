@@ -4,5 +4,7 @@ export enum Formato {
   CEL = '(99) 9 9999-9999',
   FIXO = '(99) 9999-9999',
   CEP = '99.999-999',
-  CGF = '99.999999-9'
+  CGF = '99.999999-9',
+  CNPJA = 'SS.SSS.SSS/SSSS-99',
+
 }

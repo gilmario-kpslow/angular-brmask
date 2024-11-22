@@ -1,5 +1,9 @@
 {
   "name": "glmask",
-  "version": "1.3.0",
-  "author": {"email": "gilmariosoftware@gmail.com", "name": "gilmario batista", "url": "https://www.npmjs.com/~gilmario.batista"}
+  "version": "2.0.0",
+  "author": {
+    "email": "gilmariosoftware@gmail.com",
+    "name": "gilmario batista",
+    "url": "https://www.npmjs.com/~gilmario.batista"
+  }
 }

@@ -18,8 +18,8 @@ import { MaskFoneComponent } from './mask-fone/mask-fone.component';
   ],
   imports: [
     BrowserModule,
-    GlmaskModule,
     FormsModule,
+    GlmaskModule,
     AppRoutingModule
   ],
   providers: [],

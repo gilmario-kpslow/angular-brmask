@@ -11,12 +11,10 @@ export class MaskExemploComponent implements OnInit {
   @Input() titulo: string;
   @Input() maskType: string;
   value: string;
-  @Input() exemploValue="01234567890123456789";
-  @Input() maskParams: any[];
-  constructor() {}
+  @Input() exemploValue = "01234567890123456789";
+  constructor() { }
 
   ngOnInit(): void {
-    console.log(this.maskParams)
   }
 
   getDescPipe() {
@@ -24,25 +22,13 @@ export class MaskExemploComponent implements OnInit {
   }
 
   getDescInput() {
-    if(this.maskParams) {
-      return `<input glMascara formato="${this.maskType}" type="text" outroFormato="${this.maskParams[0]}" alternar="${this.maskParams[1].name}">`;
-    } else {
-      return `<input glMascara formato="${this.maskType}" type="text" >`;
-    }
-  }
-
-  getDescPipeParams() {
-    return `{{ value | glmask: '${this.maskType}': ${this.maskParams[0]} : ${this.maskParams[1].name} }}`;
-  }
-
-  getDescFunction() {
-    return `${this.maskParams[1]}`;
+    return `<input glMascara formato="${this.maskType}" type="text" >`;
   }
 
   is(value: string) {
     return this.maskType === value;
   }
 
- 
+
 
 }

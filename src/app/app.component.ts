@@ -9,11 +9,12 @@ export class AppComponent {
   importacao = `import { GlmaskModule }  from "glmask";`;
   uso = ` imports: [ GlmaskModule ];`;
   title = 'glmask-lib-demo';
-  
-  constructor(){
-    
+  cpfCnpj = '';
+  constructor() {
+
+
   }
-  
+
   isCnpj(value) {
     return value.length > 11;
   }
@@ -22,4 +23,11 @@ export class AppComponent {
     return value.length > 10;
   }
 
+  getDesc() {
+    return '<input [(ngModel)]="cpfCnpj" type="text" glCpfCnpj>';
+  }
+
+  getPipe() {
+    return '<b>PIPE: </b> {{cpfCnpj | glCpfCnpj }}';
+  }
 }

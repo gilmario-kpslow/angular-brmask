@@ -6,15 +6,40 @@
 </div>
 
 <h3>Exemplo mascara:</h3>
-<app-mask-exemplo maskType="CPF" maskInput="glMascara" titulo="CPF" ></app-mask-exemplo>
-<app-mask-exemplo maskType="CNPJ" maskInput="glMascara" titulo="CNPJ" ></app-mask-exemplo>
-<app-mask-exemplo maskType="CPF" [maskParams]="['CNPJ', 11]" maskInput="glMascara" formato="CNPJ" titulo="CPF/CNPJ alternando" ></app-mask-exemplo>
-<app-mask-exemplo maskType="CEP" maskInput="glMascara" titulo="CEP" ></app-mask-exemplo>
-<app-mask-exemplo maskType="CGF" maskInput="glMascara" titulo="CGF" ></app-mask-exemplo>
-<app-mask-exemplo maskType="CEL" maskInput="glMascara" titulo="CEL" ></app-mask-exemplo>
-<app-mask-exemplo maskType="FIXO" maskInput="glMascara" titulo="FIXO" ></app-mask-exemplo>
-<app-mask-exemplo maskType="FIXO" [maskParams]="['CEL', isCel]" maskInput="glMascara" formato="FIXO" titulo="FIXO/CEL alternando" ></app-mask-exemplo>
-<app-mask-exemplo maskType="9999/9999" maskInput="glMascara" formato="9999/9999" titulo="Mascara qualquer" ></app-mask-exemplo>
+<app-mask-exemplo maskType="CPF" maskInput="glMascara" titulo="CPF"></app-mask-exemplo>
+<app-mask-exemplo maskType="CNPJ" maskInput="glMascara" titulo="CNPJ"></app-mask-exemplo>
+<app-mask-exemplo maskType="CNPJA" maskInput="glMascara" formato="CNPJA" titulo="CNPJ alfanumerico"></app-mask-exemplo>
+<app-mask-exemplo maskType="CEP" maskInput="glMascara" titulo="CEP"></app-mask-exemplo>
+<app-mask-exemplo maskType="CGF" maskInput="glMascara" titulo="CGF"></app-mask-exemplo>
+<app-mask-exemplo maskType="9999/9999" maskInput="glMascara" formato="9999/9999"
+    titulo="Mascara qualquer"></app-mask-exemplo>
 <h3>Exemplo Telefones diversos:</h3>
 <app-mask-fone></app-mask-fone>
 
+<h3>Exemplo CPF/CNPJ:</h3>
+
+<div class="exemplo">
+    <div style="margin-bottom: 10px;">
+        <b> </b>
+        <input [(ngModel)]="cpfCnpj" type="text" glCpfCnpj>
+        <div>
+            Retorno: {{cpfCnpj}}
+        </div>
+        <div>
+            Ex:
+            <pre>
+            {{ getDesc() }}
+
+        </pre>
+        </div>
+    </div>
+    <div>
+        <b>PIPE: </b> {{cpfCnpj | glCpfCnpj }}
+        <div>
+            Ex:
+            <pre>
+                {{getPipe() }}
+            </pre>
+        </div>
+    </div>
+</div>

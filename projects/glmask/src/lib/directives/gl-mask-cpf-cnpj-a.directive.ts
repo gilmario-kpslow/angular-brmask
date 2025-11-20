@@ -7,20 +7,20 @@ import {
   forwardRef,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { aplicarFormatacao, foneFormat } from '../pipes/mask-functions';
+import { aplicarFormatacao } from '../pipes/mask-functions';
 import { Formato } from '../pipes/formato.consts';
 
 @Directive({
-  selector: '[glCpfCnpj]',
+  selector: '[glCpfCnpja]',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => GlCpfCnpjDirective),
+      useExisting: forwardRef(() => GlCpfCnpjADirective),
       multi: true,
     },
   ],
 })
-export class GlCpfCnpjDirective implements ControlValueAccessor {
+export class GlCpfCnpjADirective implements ControlValueAccessor {
   onChange = (_: any) => {};
   onTouch = () => {};
   constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
@@ -74,7 +74,7 @@ export class GlCpfCnpjDirective implements ControlValueAccessor {
 
   private _applyMask(valor: string) {
     if (valor && valor.length <= 11) {
-      return aplicarFormatacao(valor, Formato.CPF);
+      return aplicarFormatacao(valor, Formato.CPFA);
     }
     return aplicarFormatacao(valor, Formato.CNPJA);
   }

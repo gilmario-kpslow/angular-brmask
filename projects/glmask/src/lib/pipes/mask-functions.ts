@@ -5,23 +5,37 @@ export const formatar = (formato: string, valor: string): string => {
   for (let i = 0; i < formato.length && j < valor.length; i++) {
     let tipo = formato.substring(i, i + 1);
     if (tipo === '9') {
-      retorno += valor.substring(j, j + 1).split(/\D+/).join('');
-      console.log(retorno, valor);
+      retorno += valor
+        .substring(j, j + 1)
+        .split(/\D+/)
+        .join('');
+      // console.log(retorno, valor);
       j++;
     } else if (tipo === 'S') {
-      retorno += valor.substring(j, j + 1).split(/[^A-Z0-9]+/).join('');
+      retorno += valor
+        .substring(j, j + 1)
+        .split(/[^A-Z0-9]+/)
+        .join('');
       j++;
     } else if (tipo === 's') {
-      retorno += valor.substring(j, j + 1).split(/[^a-z0-9]+/).join('');
+      retorno += valor
+        .substring(j, j + 1)
+        .split(/[^a-z0-9]+/)
+        .join('');
       j++;
     } else if (tipo === 'A') {
-      retorno += valor.substring(j, j + 1).split(/[^A-Z]+/).join('');
+      retorno += valor
+        .substring(j, j + 1)
+        .split(/[^A-Z]+/)
+        .join('');
       j++;
     } else if (tipo === 'a') {
-      retorno += valor.substring(j, j + 1).split(/[^a-z]+/).join('');
+      retorno += valor
+        .substring(j, j + 1)
+        .split(/[^a-z]+/)
+        .join('');
       j++;
-    }
-    else {
+    } else {
       retorno += formato.substring(i, i + 1);
     }
   }
@@ -36,7 +50,7 @@ export const aplicarFormatacao = (valor: string, formato: string) => {
     return formatar(Formato[formato], valor);
   }
   return formatar(formato, valor);
-}
+};
 
 export const foneFormat = (valor: string) => {
   if (!valor) {
@@ -54,4 +68,4 @@ export const foneFormat = (valor: string) => {
   } else {
     return formatar('(99) 99 9999-9999', valor);
   }
-}
+};

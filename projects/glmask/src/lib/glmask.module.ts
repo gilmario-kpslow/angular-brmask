@@ -6,15 +6,36 @@ import { GlFoneDirective } from './directives/gl-mask-fone.directive';
 import { MascaraFonePipe } from './pipes/mascara-fone.pipe';
 import { GlCpfCnpjDirective } from './directives/gl-mask-cpf-cnpj.directive';
 import { GlCpfCnpjPipe } from './pipes/mascara-cpf-cnpj.pipe';
+import { GlCpfCnpjAPipe } from './pipes/mascara-cpf-cnpj-a.pipe';
+import { GlCpfCnpjADirective } from './directives/gl-mask-cpf-cnpj-a.directive';
 
 @NgModule({
-  declarations: [MascaraPipe, GlMASKDirective, GlFoneDirective, MascaraFonePipe, GlCpfCnpjDirective, GlCpfCnpjPipe],
-  imports: [
-    CommonModule
+  declarations: [
+    MascaraPipe,
+    GlMASKDirective,
+    GlFoneDirective,
+    MascaraFonePipe,
+    GlCpfCnpjDirective,
+    GlCpfCnpjADirective,
+    GlCpfCnpjPipe,
+    GlCpfCnpjAPipe,
   ],
-  exports: [MascaraPipe, GlMASKDirective, MascaraFonePipe, GlFoneDirective, GlCpfCnpjDirective, GlCpfCnpjPipe],
+  imports: [CommonModule],
+  exports: [
+    MascaraPipe,
+    GlMASKDirective,
+    MascaraFonePipe,
+    GlFoneDirective,
+    GlCpfCnpjDirective,
+    GlCpfCnpjPipe,
+    GlCpfCnpjAPipe,
+    GlCpfCnpjADirective,
+  ],
   providers: [
-    GlMASKDirective, GlFoneDirective, GlCpfCnpjDirective
-  ]
+    GlMASKDirective,
+    GlFoneDirective,
+    GlCpfCnpjDirective,
+    GlCpfCnpjADirective,
+  ],
 })
-export class GlmaskModule { }
+export class GlmaskModule {}

@@ -6,5 +6,5 @@ export enum Formato {
   CEP = '99.999-999',
   CGF = '99.999999-9',
   CNPJA = 'SS.SSS.SSS/SSSS-99',
-
+  CPFA = 'SSS.SSS.SSS-99',
 }

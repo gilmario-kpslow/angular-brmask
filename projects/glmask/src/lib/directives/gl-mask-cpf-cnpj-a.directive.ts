@@ -23,16 +23,20 @@ import { Formato } from '../pipes/formato.consts';
 export class GlCpfCnpjADirective implements ControlValueAccessor {
   onChange = (_: any) => {};
   onTouch = () => {};
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
+  constructor(
+    private renderer: Renderer2,
+    private elementRef: ElementRef,
+  ) {}
 
   @HostListener('input', ['$event'])
   oninput(event: Event) {
-    const value = this.elementRef.nativeElement.value;
+    let value = this.elementRef.nativeElement.value;
+    if (value) value = value.toUpperCase();
     this.elementRef.nativeElement.value = this._applyMask(
-      value.split(/[^A-Za-z0-9]+/).join('')
+      value.split(/[^A-Za-z0-9]+/).join(''),
     );
     this.onChange(
-      this.elementRef.nativeElement.value.split(/[^A-Za-z0-9]/).join('')
+      this.elementRef.nativeElement.value.split(/[^A-Za-z0-9]/).join(''),
     );
     this.onTouch();
     event.preventDefault();
@@ -65,7 +69,7 @@ export class GlCpfCnpjADirective implements ControlValueAccessor {
       this.renderer.setAttribute(
         this.elementRef.nativeElement,
         'disabled',
-        'disabled'
+        'disabled',
       );
     } else {
       this.renderer.removeAttribute(this.elementRef.nativeElement, 'disabled');
